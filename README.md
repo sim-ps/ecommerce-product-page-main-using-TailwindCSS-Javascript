@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/ecommerce-product-page-main-using-tailwindcss-and-javascript-MVJl7Ko1d6](https://www.frontendmentor.io/solutions/ecommerce-product-page-main-using-tailwindcss-and-javascript-MVJl7Ko1d6)
-- Live Site URL: [https://sim-ps.github.io/ecommerce-product-page-main-using-TailwindCSS-Javascript/](https://your-live-site-url.com](https://sim-ps.github.io/ecommerce-product-page-main-using-TailwindCSS-Javascript/))
+- Live Site URL: [https://sim-ps.github.io/ecommerce-product-page-main-using-TailwindCSS-Javascript/](https://sim-ps.github.io/ecommerce-product-page-main-using-TailwindCSS-Javascript/))
 
 ## My process
 
