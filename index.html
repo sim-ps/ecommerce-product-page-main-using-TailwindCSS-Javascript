@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop the Fall Limited Edition Sneakers by Sneaker Company. Durable, stylish, and perfect for casual wear."
+    />
+    <link
+      rel="icon"
+      href="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/favicon-32x32-DQjEQYWa.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | E-commerce product page</title>
+    <script type="module" crossorigin src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/src/main-V05dYXiJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/ecommerce-product-page-main-using-TailwindCSS-Javascript/src/style-BK1WABMb.css">
+  </head>
+  <body class="container mx-auto desktop:px-4">
+    <!-- LightBox -->
+    <div
+      id="productLightBox"
+      class="invisible fixed inset-0 bg-black/60 z-50 flex items-center justify-center"
+    >
+      <div class="flex flex-col w-sm gap-4">
+        <!-- Close Button -->
+        <button
+          id="closeBtn"
+          class="self-end font-bold text-[var(--color-orange)] text-lg"
+        >
+          <img class="w-5" src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-close-p4PkmUax.svg" alt="close" />
+        </button>
+        <!-- Main Product -->
+        <div class="relative">
+          <button
+            id="next"
+            class="absolute bottom-[45%] -right-5 bg-white rounded-full w-10 h-10"
+          >
+            <img
+              class="mx-auto my-auto"
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-next-BN9EWL5I.svg"
+              alt="next"
+            />
+          </button>
+
+          <button
+            id="previous"
+            class="absolute bottom-[45%] -left-5 bg-white rounded-full w-10 h-10"
+          >
+            <img
+              class="mx-auto my-auto"
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-previous-BhpP1Yzd.svg"
+              alt="previous"
+            />
+          </button>
+          <img
+            id="mainLightBox"
+            class="rounded-2xl"
+            src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-D36l1Pee.jpg"
+            alt="product-1"
+          />
+        </div>
+        <!-- Thumbnail -->
+        <div class="flex flex-nowrap justify-between items-center gap-4 px-4">
+          <div
+            class="thumbLightBox relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+          >
+            <img
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-thumbnail-CUE_C-rn.jpg"
+              alt="product-1-thumbnail"
+            />
+
+            <div
+              class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+            ></div>
+          </div>
+
+          <div
+            class="thumbLightBox relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+          >
+            <img
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-2-thumbnail-B_S5qX-D.jpg"
+              alt="product-2-thumbnail"
+            />
+
+            <div
+              class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+            ></div>
+          </div>
+
+          <div
+            class="thumbLightBox relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+          >
+            <img
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-3-thumbnail-DFTZEtJG.jpg"
+              alt="product-3-thumbnail"
+            />
+
+            <div
+              class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+            ></div>
+          </div>
+
+          <div
+            class="thumbLightBox relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+          >
+            <img
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-4-thumbnail-ByUjHEO4.jpg"
+              alt="product-4-thumbnail"
+            />
+
+            <div
+              class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Cart -->
+    <div
+      id="cart"
+      class="absolute bg-white rounded-xl shadow-xl inset-x-0 desktop:inset-auto mobile:mx-5 mobile:top-20 desktop:right-0 desktop:top-25 desktop:right-20 z-50 invisible"
+    >
+      <div class="flex flex-col gap-6 py-6 relative">
+        <p class="font-bold text-sm px-6">Cart</p>
+
+        <hr />
+
+        <div
+          id="hasItems"
+          class="invisible flex flex-col gap-y-4 justify-items-stretch"
+        >
+          <div class="flex gap-4 items-center px-6">
+            <img
+              class="w-12 rounded-sm shrink-0"
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-thumbnail-CUE_C-rn.jpg"
+              alt="product-1"
+            />
+            <div class="text-sm text-[var(--color-dark-grayish-blue)]">
+              <p>Fall Limited Edition Sneakers</p>
+              <p>
+                $125.00 x <span class="display">3</span>
+                <strong
+                  id="totalAmount"
+                  class="text-[var(--color-very-dark-blue)]"
+                  >$375.00</strong
+                >
+              </p>
+            </div>
+            <img
+              class="ml-auto"
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-delete-DmtfRzPP.svg"
+              alt="icon-delete"
+            />
+          </div>
+
+          <button
+            class="rounded-lg mx-6 py-3 text-sm font-bold text-[var(--color-very-dark-blue)] bg-[var(--color-orange)]"
+          >
+            Checkout
+          </button>
+        </div>
+
+        <div
+          id="isEmpty"
+          class="font-bold text-sm text-[var(--color-dark-grayish-blue)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 text-center"
+        >
+          Your cart is empty.
+        </div>
+      </div>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="hidden desktop:flex items-center gap-16 my-8">
+      <img class="h-5" src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/logo-BhYsB23l.svg" alt="Sneaker Company Logo" />
+      <ul class="flex gap-8 text-sm text-[var(--color-dark-grayish-blue)]">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Woman</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+      <div class="flex items-center gap-8 ml-auto">
+        <button id="cart-icon" class="relative shrink-0 cursor-pointer">
+          <img class="brightness-0" src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-cart-MbOzWv2l.svg" alt="cart" />
+          <div
+            id="display-badge"
+            class="invisible -top-2 -right-3 text-xs font-bold w-6 h-4 absolute rounded-full bg-[var(--color-orange)] text-white"
+          >
+            0
+          </div>
+        </button>
+        <img
+          class="h-14 w-14 rounded-full hover:ring-2 hover:ring-[var(--color-orange)]"
+          src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-avatar-DVd-Kri7.png"
+          alt="..."
+        />
+      </div>
+    </nav>
+
+    <!-- NavBar Mobile -->
+    <nav class="desktop:hidden my-8 flex items-center gap-4 relative px-4">
+      <div class="invisible fixed inset-0 bg-black/60"></div>
+
+      <div
+        id="nav-mobile-menu"
+        class="invisible bg-white p-5 font-bold z-50 fixed w-3/5 inset-0"
+      >
+        <button>
+          <img
+            class="brightness-0 mb-8"
+            id="closeBtn-nav"
+            src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-close-p4PkmUax.svg"
+            alt="close"
+          />
+        </button>
+        <ul
+          class="flex flex-col gap-4 text-sm text-[var(--color-very-dark-blue)]"
+        >
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Woman</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <button id="nav-mobile-menu-btn">
+        <img src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-menu-B7o1lNgt.svg" alt="menu" />
+      </button>
+
+      <img src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/logo-BhYsB23l.svg" alt="logo" />
+
+      <button
+        id="cart-icon-mobile"
+        class="relative shrink-0 cursor-pointer ml-auto"
+      >
+        <img
+          class="brightness-0 w-5 h-5"
+          src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-cart-MbOzWv2l.svg"
+          alt="cart"
+        />
+        <div
+          id="display-badge-mobile"
+          class="invisible -top-2 -right-3 text-xs font-bold w-5 h-4 flex justify-center absolute rounded-full bg-[var(--color-orange)] text-white"
+        >
+          0
+        </div>
+      </button>
+
+      <img
+        class="h-8 w-8 rounded-full hover:ring-2 hover:ring-[var(--color-orange)]"
+        src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-avatar-DVd-Kri7.png"
+        alt="..."
+      />
+    </nav>
+
+    <hr class="hidden desktop:block" />
+
+    <!-- Product Section Mobile -->
+
+    <main class="desktop:hidden my-8">
+      <div class="relative">
+        <button
+          id="next-mobile"
+          class="absolute bottom-[45%] right-3 bg-white rounded-full w-10 h-10"
+        >
+          <img
+            class="mx-auto my-auto brightness-0"
+            src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-next-BN9EWL5I.svg"
+            alt="next"
+          />
+        </button>
+
+        <button
+          id="previous-mobile"
+          class="absolute bottom-[45%] left-3 bg-white rounded-full w-10 h-10"
+        >
+          <img
+            class="mx-auto my-auto brightness-0"
+            src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-previous-BhpP1Yzd.svg"
+            alt="previous"
+          />
+        </button>
+        <img
+          id="mainLightBox-mobile"
+          src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-D36l1Pee.jpg"
+          alt="product-1"
+        />
+      </div>
+      <div class="p-4">
+        <h1
+          class="uppercase font-bold tracking-widest text-xs text-[var(--color-dark-grayish-blue)] pb-3"
+        >
+          Sneaker Company
+        </h1>
+        <h2 class="text-2xl text-[var(--color-very-dark-blue)] font-bold pb-4">
+          Fall Limited Edition Sneakers
+        </h2>
+        <article class="text-sm text-[var(--color-dark-grayish-blue)] pb-3">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </article>
+
+        <div class="flex items-baseline gap-4 pb-2">
+          <p class="font-bold text-2xl text-[var(--color-very-dark-blue)]">
+            $<span id="amount-mobile">125.00</span>
+          </p>
+          <p
+            class="bg-[var(--color-very-dark-blue)] text-white font-bold rounded-sm px-2 text-sm"
+          >
+            50%
+          </p>
+
+          <p
+            class="ml-auto line-through text-sm text-[var(--color-dark-grayish-blue)] font-bold pb-6"
+          >
+            $250.00
+          </p>
+        </div>
+
+        <div class="grid grid-rows-2 gap-4">
+          <!-- quantity -->
+          <div
+            class="flex justify-evenly items-baseline font-bold bg-[var(--color-light-grayish-blue)] gap-10 rounded-lg p-3"
+          >
+            <button
+              id="minus-mobile"
+              class="cursor-pointer hover:text-[var(--color-orange)]/50 text-[var(--color-orange)] text-lg"
+            >
+              -
+            </button>
+            <p
+              class="display-mobile w-8 text-sm text-center cursor-default text-[var(--color-very-dark-blue)]"
+            >
+              0
+            </p>
+            <button
+              id="plus-mobile"
+              class="cursor-pointer hover:text-[var(--color-orange)]/50 text-[var(--color-orange)] text-lg"
+            >
+              +
+            </button>
+          </div>
+          <!-- addToCart -->
+          <a
+            id="addToCart-mobile"
+            class="cursor-pointer flex items-center justify-center w-full hover:bg-[var(--color-orange)]/50 bg-[var(--color-orange)] rounded-lg gap-4"
+          >
+            <img
+              class="h-3 w-3 shrink-0 brightness-0"
+              src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-cart-MbOzWv2l.svg"
+              alt="cart"
+            />
+            <button
+              class="text-sm text-[var(--color-very-dark-blue)] font-bold"
+            >
+              Add to cart
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Product Section -->
+    <main class="hidden desktop:block px-14 my-24">
+      <div class="grid grid-cols-2 gap-28">
+        <!-- Product Gallery -->
+        <div id="productGallery">
+          <img
+            class="rounded-2xl"
+            src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-D36l1Pee.jpg"
+            alt="product-1"
+          />
+          <div class="flex flex-nowrap justify-between items-center gap-6 my-6">
+            <div
+              class="relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+            >
+              <img
+                src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-1-thumbnail-CUE_C-rn.jpg"
+                alt="product-1-thumbnail"
+              />
+
+              <div
+                class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+              ></div>
+            </div>
+
+            <div
+              class="relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+            >
+              <img
+                src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-2-thumbnail-B_S5qX-D.jpg"
+                alt="product-2-thumbnail"
+              />
+
+              <div
+                class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+              ></div>
+            </div>
+
+            <div
+              class="relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+            >
+              <img
+                src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-3-thumbnail-DFTZEtJG.jpg"
+                alt="product-3-thumbnail"
+              />
+
+              <div
+                class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+              ></div>
+            </div>
+
+            <div
+              class="relative rounded-xl hover:ring-2 hover:ring-[var(--color-orange)] overflow-hidden group"
+            >
+              <img
+                src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/image-product-4-thumbnail-ByUjHEO4.jpg"
+                alt="product-4-thumbnail"
+              />
+
+              <div
+                class="absolute inset-0 bg-white opacity-0 group-hover:opacity-60"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="my-auto">
+          <h1
+            class="uppercase font-bold tracking-widest text-sm text-[var(--color-dark-grayish-blue)] pb-6"
+          >
+            Sneaker Company
+          </h1>
+          <h2
+            class="text-4xl text-[var(--color-very-dark-blue)] font-bold pb-8"
+          >
+            Fall Limited Edition Sneakers
+          </h2>
+          <article class="text-sm text-[var(--color-dark-grayish-blue)] pb-6">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </article>
+
+          <div class="flex items-center gap-4 pb-2">
+            <p class="font-bold text-2xl text-[var(--color-very-dark-blue)]">
+              $<span id="amount">125.00</span>
+            </p>
+            <p
+              class="bg-[var(--color-very-dark-blue)] text-white font-bold rounded-sm px-2 text-sm"
+            >
+              50%
+            </p>
+          </div>
+
+          <p
+            class="line-through text-sm text-[var(--color-dark-grayish-blue)] font-bold pb-6"
+          >
+            $250.00
+          </p>
+
+          <div class="flex gap-4">
+            <div
+              class="flex items-baseline font-bold bg-[var(--color-light-grayish-blue)] gap-10 rounded-lg p-3"
+            >
+              <button
+                id="minus"
+                class="cursor-pointer hover:text-[var(--color-orange)]/50 text-[var(--color-orange)] text-lg"
+              >
+                -
+              </button>
+              <p
+                class="display w-8 text-sm text-center cursor-default text-[var(--color-very-dark-blue)]"
+              >
+                0
+              </p>
+              <button
+                id="plus"
+                class="cursor-pointer hover:text-[var(--color-orange)]/50 text-[var(--color-orange)] text-lg"
+              >
+                +
+              </button>
+            </div>
+
+            <a
+              id="addToCart"
+              class="cursor-pointer flex items-center justify-center w-full hover:bg-[var(--color-orange)]/50 bg-[var(--color-orange)] rounded-lg gap-4"
+            >
+              <img
+                class="h-3 w-3 shrink-0 brightness-0"
+                src="/ecommerce-product-page-main-using-TailwindCSS-Javascript/assets/icon-cart-MbOzWv2l.svg"
+                alt="cart"
+              />
+              <button
+                class="text-sm text-[var(--color-very-dark-blue)] font-bold"
+              >
+                Add to cart
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="text-center text-xs desktop:text-sm text-[var(--color-dark-grayish-blue)] pb-6"
+    >
+      <a
+        class="underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Frontend Mentor</a
+      >. Coded By
+      <a class="font-bold" href="https://github.com/sim-ps"
+        >Simran P. Sujanani</a
+      >
+    </footer>
+  </body>
+</html>
