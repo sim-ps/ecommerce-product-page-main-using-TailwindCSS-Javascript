@@ -80,10 +80,10 @@ document.querySelector("#closeBtn").addEventListener("click", () => {
 	document.querySelector("#productLightBox").classList.add("invisible");
 });
 var images = [
-	`${base}./images/image-product-1.jpg`,
-	`${base}./images/image-product-2.jpg`,
-	`${base}./images/image-product-3.jpg`,
-	`${base}./images/image-product-4.jpg`
+	`${base}./assets/image-product-1.jpg`,
+	`${base}./assets/image-product-2.jpg`,
+	`${base}./assets/image-product-3.jpg`,
+	`${base}./assets/image-product-4.jpg`
 ];
 var current = 0;
 document.querySelector("#next").addEventListener("click", () => {
