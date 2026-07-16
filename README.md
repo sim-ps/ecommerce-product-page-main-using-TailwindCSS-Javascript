@@ -30,8 +30,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./desktop.png)
-![](./mobile.png)
+| Desktop | Mobile |
+| --------------- | --------------- |
+| ![](./desktop.png) | ![](./mobile.png) |
 
 ### Links
 
